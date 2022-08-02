@@ -6,10 +6,14 @@
 
   <div class="box">
     <% newListItems.forEach(function(singleArrayItem) { %>
-      <div class="item">
-        <input type="checkbox">
-        <p><%= singleArrayItem.name %></p>
-      </div>
+      <form action="/delete" method="post">
+
+        <div class="item">
+          <input type="checkbox" name="checkbox" value="<%= singleArrayItem._id %>" onChange="this.form.submit()">
+          <p><%= singleArrayItem.name %></p>
+        </div>
+
+      </form>
     <% }); %>
 
       <form class="item" action="/" method="post">

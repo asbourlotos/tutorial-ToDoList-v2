@@ -7,12 +7,11 @@
   <div class="box">
     <% newListItems.forEach(function(singleArrayItem) { %>
       <form action="/delete" method="post">
-
         <div class="item">
           <input type="checkbox" name="checkbox" value="<%= singleArrayItem._id %>" onChange="this.form.submit()">
           <p><%= singleArrayItem.name %></p>
         </div>
-
+        <input type="hidden" name="listName" value="<%= listTitle %>"></input>
       </form>
     <% }); %>
 
